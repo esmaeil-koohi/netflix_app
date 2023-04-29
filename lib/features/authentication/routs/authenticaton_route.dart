@@ -4,6 +4,6 @@ import 'package:netflix_proj/features/authentication/bindings/authentication_bin
 import 'package:netflix_proj/features/authentication/presentaion/pages/login_screen.dart';
 
 List<GetPage> authenticationRoutes = [
-  GetPage(name: AppRoutes.LOGIN, page: () => LoginScreen(), binding: AuthenticationBinding()),
+  GetPage(name: AppRoutes.LOGIN, page: () => const LoginScreen(), binding: AuthenticationBinding()),
   // GetPage(name: AppRoutes.SIGNUP, page: () => ,),
 ];

@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:netflix_proj/features/authentication/presentaion/controller/auth_controller.dart';
+import 'package:netflix_proj/features/authentication/presentaion/widgets/enter_button.dart';
 
 class LoginScreen extends GetView<AuthController> {
     const LoginScreen({Key? key}) : super(key: key);
@@ -86,15 +87,9 @@ class LoginScreen extends GetView<AuthController> {
                         ),
                         const SizedBox(height: 10,),
                         controller.isLoading.isFalse ? const Center(child: CircularProgressIndicator(),) :
-                        ElevatedButton(
-                        style: ButtonStyle(
-                          fixedSize: MaterialStatePropertyAll(Size(width * 0.73, 50)),
-                          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
-                          ),
-                            onPressed: () {
+                        EnterButton(onPress: () {
 
-                            },
-                         child: const Text('Login', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
+                        }, text: 'Login'),
                       ],
                     ),
                   ),),
