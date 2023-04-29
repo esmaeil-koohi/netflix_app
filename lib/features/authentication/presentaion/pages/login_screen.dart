@@ -48,11 +48,13 @@ class LoginScreen extends GetView<AuthController> {
                 borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
+                  padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
                   child: Obx(() => Form(
                     key: controller.formKey,
                     child: Column(
                       children: [
+                        const Text('Login', style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold, color: Colors.deepOrange),),
+                        const SizedBox(height: 50,),
                         TextFormField(
                           initialValue: controller.email.value,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -82,10 +84,17 @@ class LoginScreen extends GetView<AuthController> {
                           ),
                           obscureText: controller.isPasswordShow.value,
                         ),
+                        const SizedBox(height: 10,),
                         controller.isLoading.isFalse ? const Center(child: CircularProgressIndicator(),) :
-                        ElevatedButton(onPressed: () {
+                        ElevatedButton(
+                        style: ButtonStyle(
+                          fixedSize: MaterialStatePropertyAll(Size(width * 0.73, 50)),
+                          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+                          ),
+                            onPressed: () {
 
-                        }, child: const Text('Login', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
+                            },
+                         child: const Text('Login', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
                       ],
                     ),
                   ),),
